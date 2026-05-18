@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 function PlantCard({ plant }) {
-  // local state for sold out button
-  const [isSoldOut, setIsSoldOut] = useState(false);
+  // state for sold out button
+  const [soldOut, setSoldOut] = useState(false);
 
   function handleSoldOut() {
-    setIsSoldOut(!isSoldOut);
+    setSoldOut(!soldOut);
   }
 
   return (
@@ -16,8 +16,8 @@ function PlantCard({ plant }) {
 
       <p>Price: ${plant.price}</p>
 
-      {isSoldOut ? (
-        <button className="sold-out" onClick={handleSoldOut}>
+      {soldOut ? (
+        <button className="primary" onClick={handleSoldOut}>
           Sold Out
         </button>
       ) : (

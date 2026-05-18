@@ -8,7 +8,6 @@ function NewPlantForm({ onAddPlant }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // object sent to backend
     const newPlant = {
       name: name,
       image: image,
@@ -28,7 +27,7 @@ function NewPlantForm({ onAddPlant }) {
         onAddPlant(data);
       });
 
-    // clear form inputs
+    // clear form
     setName("");
     setImage("");
     setPrice("");
@@ -36,7 +35,7 @@ function NewPlantForm({ onAddPlant }) {
 
   return (
     <div className="new-plant-form">
-      <h2>Add New Plant</h2>
+      <h2>New Plant</h2>
 
       <form onSubmit={handleSubmit}>
         <input
