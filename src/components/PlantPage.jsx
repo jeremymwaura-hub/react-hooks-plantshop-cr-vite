@@ -1,14 +1,13 @@
-import React from "react";
-import NewPlantForm from "./NewPlantForm";
-import PlantList from "./PlantList";
-import Search from "./Search";
+import PlantCard from "./PlantCard";
 
-function PlantPage() {
+function PlantPage({ plants }) {
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      <ul className="cards">
+        {plants.map((plant) => (
+          <PlantCard key={plant.id} plant={plant} />
+        ))}
+      </ul>
     </main>
   );
 }
