@@ -9,16 +9,16 @@ function PlantCard({ plant }) {
   }
 
   return (
-    <li className="card">
+    <li className="card" data-testid="plant-item">
       <img src={plant.image} alt={plant.name} />
 
       <h4>{plant.name}</h4>
 
-      <p>Price: ${plant.price}</p>
+      <p>Price: {plant.price}</p>
 
       {soldOut ? (
         <button className="primary" onClick={handleSoldOut}>
-          Sold Out
+          Out of Stock
         </button>
       ) : (
         <button onClick={handleSoldOut}>In Stock</button>
